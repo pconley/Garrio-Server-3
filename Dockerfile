@@ -14,3 +14,4 @@ EXPOSE 3000
 # which prevents the next rails invocation to fail to execute
 # so we remove it before starting up rails
 CMD rm -rf ./tmp/pids/server.pid && rails s -b 0.0.0.0 -p 3000
+#CMD echo "hello"

@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jquery-rails' # needed for bootstrap
+gem 'bootstrap', '~> 4.0.0.beta2'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_bot'
@@ -45,6 +48,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bootscaf'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

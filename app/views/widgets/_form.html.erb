@@ -1,7 +1,7 @@
 <%= form_with(model: widget, local: true) do |form| %>
   <% if widget.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(widget.errors.count, "error") %> prohibited this widget from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <strong><%= pluralize(widget.errors.count, "error") %> prohibited this widget from being saved:</strong>
 
       <ul>
       <% widget.errors.full_messages.each do |message| %>
@@ -11,22 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="row">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :widget_name %>
+    <%= f.rm.text_field :name, id: :widget_name, { class: "form-control" } %>
+</div>
+</div>
   </div>
 
-  <div class="field">
+  <div class="row">
     <%= form.label :color %>
-    <%= form.text_field :color, id: :widget_color %>
+    <%= f.rm.text_field :color, id: :widget_color, { class: "form-control" } %>
+</div>
+</div>
   </div>
 
-  <div class="field">
+  <div class="row">
     <%= form.label :size %>
-    <%= form.number_field :size, id: :widget_size %>
+    <%= f.rm.number_field :size, id: :widget_size, { class: "form-control" } %>
+</div>
+</div>
   </div>
 
-  <div class="actions">
+  <div class="actions text-center">
     <%= form.submit %>
   </div>
 <% end %>

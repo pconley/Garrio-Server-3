@@ -1,24 +1,13 @@
-# README
+# Garrio Server 3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Details at...
 
-Things you may want to cover:
+Commands
 
-* Ruby version
+> docker-compose build
+> docker-compose up
+> docker-compose down
 
-* System dependencies
+To connect in another windo
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> docker-compose exec app /bin/bash
