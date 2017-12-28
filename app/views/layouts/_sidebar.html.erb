@@ -4,13 +4,16 @@
       <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Reports</a>
+      <% active = @dashboard == 'analytics' ? 'nav-active' : '' %>
+      <%= link_to 'Analytics', dashboards_path('analytics'), class:"nav-link #{active}" %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Analytics</a>
+      <% active = @dashboard == 'reports' ? 'nav-active' : '' %>
+      <%= link_to 'Reports', dashboards_path('reports'), class:"nav-link #{active}" %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Export</a>
+      <% active = @dashboard == 'exports' ? 'nav-active' : '' %>
+      <%= link_to 'Exports', dashboards_path('exports'), class:"nav-link #{active}" %>
     </li>
   </ul>
 
@@ -19,7 +22,8 @@
       <a class="nav-link active" href="#">Section I <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      <%= link_to 'Widgets...', widgets_path, class:"nav-link" %>
+      <% active = current_page?(controller: 'widgets', action: 'index') ? 'nav-active' : '' %>
+      <%= link_to 'Widgets...', widgets_path, class:"nav-link #{active}" %>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Nav item again</a>
