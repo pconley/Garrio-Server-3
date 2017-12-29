@@ -1,5 +1,6 @@
-          <h2>Widgets</h2>
-          <div class="table-responsive">
+<h2>Widgets</h2>
+
+<div class="table-responsive">
 
 <table class="table table-striped">
   <thead>
@@ -15,7 +16,7 @@
     <% @widgets.each do |widget| %>
       <tr>
         <td><%= widget.name %></td>
-        <td><%= widget.color %></td>
+        <td><%= widget.color.name if widget.color %></td>
         <td><%= widget.size %></td>
         <td><%= link_to 'Show', widget %></td>
         <td><%= link_to 'Edit', edit_widget_path(widget) %></td>
@@ -25,8 +26,7 @@
   </tbody>
 </table>
 
-
-          </div>
+</div>
 
 <br>
 

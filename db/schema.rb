@@ -10,17 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221152604) do
+ActiveRecord::Schema.define(version: 20171228132335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "widgets", force: :cascade do |t|
+  create_table "colors", force: :cascade do |t|
     t.string "name"
-    t.string "color"
-    t.integer "size"
+    t.string "rgb"
+    t.string "hex"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "widgets", force: :cascade do |t|
+    t.string "name"
+    t.integer "size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "color_id"
+    t.index ["color_id"], name: "index_widgets_on_color_id"
+  end
+
+  add_foreign_key "widgets", "colors"
 end

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @widget.name %>
@@ -7,7 +5,7 @@
 
 <p>
   <strong>Color:</strong>
-  <%= @widget.color %>
+  <%= @widget.color.name if @widget.color %>
 </p>
 
 <p>

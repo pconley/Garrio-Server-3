@@ -17,9 +17,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color, id: :widget_color %>
+    <%= form.label :color_id %>
+    <%= collection_select(:widget, :color_id, Color.all, :id, :name) %>
   </div>
+
 
   <div class="field">
     <%= form.label :size %>
