@@ -2,11 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "widgets/edit", :type => :view do
   before(:each) do
-    @widget = assign(:widget, Widget.create!(
-      :name => "MyString",
-      :color => "MyString",
-      :size => 1
-    ))
+    @color = FactoryBot.create(:color, name: 'bigred')
+    @widget = assign(:widget, Widget.create!(:name => "wigname", color_id: @color.id, size: 1))
   end
 
   it "renders the edit widget form" do
@@ -16,7 +13,7 @@ RSpec.describe "widgets/edit", :type => :view do
 
       assert_select "input#widget_name[name=?]", "widget[name]"
 
-      assert_select "input#widget_color[name=?]", "widget[color]"
+      # assert_select "input#widget_color_id[name=?]", "bigred"
 
       assert_select "input#widget_size[name=?]", "widget[size]"
     end

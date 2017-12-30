@@ -25,7 +25,6 @@ class WidgetsController < ApplicationController
   # POST /widgets.json
   def create
     @widget = Widget.new(widget_params)
-
     respond_to do |format|
       if @widget.save
         format.html { redirect_to @widget, notice: 'Widget was successfully created.' }
@@ -41,7 +40,6 @@ class WidgetsController < ApplicationController
   # PATCH/PUT /widgets/1.json
   def update
     respond_to do |format|
-      puts "*** widget params #{widget_params}"
       if @widget.update(widget_params)
         format.html { redirect_to @widget, notice: 'Widget was successfully updated.' }
         format.json { render :show, status: :ok, location: @widget }
