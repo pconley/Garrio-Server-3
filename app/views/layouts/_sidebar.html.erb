@@ -5,7 +5,8 @@
     </li>
     <li class="nav-item">
       <% active = @dashboard == 'analytics' ? 'nav-active' : '' %>
-      <%= link_to 'Analytics', dashboards_path('analytics'), class:"nav-link #{active}" %>
+      <%-# the display name to the user does not match the internal name -%>
+      <%= link_to 'Charts', dashboards_path('analytics'), class:"nav-link #{active}" %>
     </li>
     <li class="nav-item">
       <% active = @dashboard == 'reports' ? 'nav-active' : '' %>

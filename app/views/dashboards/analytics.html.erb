@@ -1,24 +1,35 @@
-<h1>Analytics</h1>
+<h1>Widget Charts</h1>
 
 <section class="row text-center placeholders">
 	<div class="col-6 col-sm-3 placeholder">
-	  <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-	  <h4>Label</h4>
-	  <div class="text-muted">Something else</div>
+	  <%= pie_chart Widget.group(:color).count, 
+	  		donut: true, 
+	  		width: "300px", height: "300px",
+	  		colors: ["blue", "orange","red","gray","black"],
+	  		legend: false
+	  %>
+	  <h4>Widgets by Color</h4>
+	  <div class="text-muted">TODO: use color names</div>
 	</div>
 	<div class="col-6 col-sm-3 placeholder">
-	  <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-	  <h4>Label</h4>
-	  <span class="text-muted">Something else</span>
+	  <%= column_chart Widget.group_by_day_of_week(:created_at, format: "%a").count,
+	  	  	width: "300px", height: "300px"
+	  %>
+	  <h4>By Day of Week</h4>
+	  <span class="text-muted">it was created</span>
 	</div>
 	<div class="col-6 col-sm-3 placeholder">
-	  <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-	  <h4>Label</h4>
-	  <span class="text-muted">Something else</span>
+	  <%= line_chart Widget.group(:color_id).group_by_week(:created_at).count %>	
+	  <h4>By Week Created</h4>
+	  <span class="text-muted">Fix the colors</span>
 	</div>
 	<div class="col-6 col-sm-3 placeholder">
-	  <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-	  <h4>Label</h4>
-	  <span class="text-muted">Something else</span>
+		<%= timeline [
+		  ["Dev", "2017-10-01", "2018-02-02"],
+		  ["Test", "2018-01-01", "2018-04-02"],
+		  ["Man", "2018-04-05", "2018-12-31"]
+		] %>
+	  <h4>Manufacturing Plan</h4>
+	  <span class="text-muted">Really fake data</span>
 	</div>
 </section>

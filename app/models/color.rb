@@ -5,6 +5,7 @@ class Color < ApplicationRecord
   validates :name, presence: true
 
   def to_s
-  	"<Color#id #{name}>"
+  	"<Color##{id} #{name}>"
+  	name
   end
 end
