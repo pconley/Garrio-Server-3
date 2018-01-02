@@ -1,22 +1,23 @@
-# Garrio Server 3
+# Rails Template
 
 Details at...
 
 Commands
 
-> docker-compose build
-> docker-compose up
-> docker-compose down
+* docker-compose build
+* docker-compose up
+* docker-compose down
 
-To connect in another windo
+To connect in another window
 
-> docker-compose exec app /bin/bash
+* docker-compose exec app /bin/bash
 
 ## Technologies
 
->> rails 5
->> bootstrap 4
->> docker et al
->> rspec, factory_bot, (faker)
->> chartkick & google charts
->> groupdate to group for charts
+* rails 5
+* bootstrap 4
+* docker et al
+* rspec, factory_bot, (faker)
+* chartkick & google charts
+* groupdate to group for charts
+* font awesome for the icons
