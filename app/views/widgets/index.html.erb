@@ -5,22 +5,25 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Color</th>
       <th>Size</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @widgets.each do |widget| %>
       <tr>
-        <td><%= widget.name %></td>
+        <td><%= link_to edit_widget_path(widget) do %><i class="fa fa-edit fa-lg"></i><% end %></td>
+        <td><%= link_to widget.name, widget %></td>
         <td><%= widget.color.name if widget.color %></td>
         <td><%= widget.size %></td>
-        <td><%= link_to 'Show', widget %></td>
-        <td><%= link_to 'Edit', edit_widget_path(widget) %></td>
-        <td><%= link_to 'Destroy', widget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to widget, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+          <i class="fa fa-minus-square fa-lg"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

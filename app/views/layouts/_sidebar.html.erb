@@ -6,11 +6,14 @@
     <li class="nav-item">
       <% active = @dashboard == 'analytics' ? 'nav-active' : '' %>
       <%-# the display name to the user does not match the internal name -%>
-      <%= link_to 'Charts', dashboards_path('analytics'), class:"nav-link #{active}" %>
+      <%= link_to dashboards_path('analytics'), class:"nav-link #{active}" do %>
+        <span class="glyphicon glyphicon-euro"></span> Charts
+      <% end %>
+
     </li>
     <li class="nav-item">
       <% active = @dashboard == 'reports' ? 'nav-active' : '' %>
-      <%= link_to 'Reports', dashboards_path('reports'), class:"nav-link #{active}" %>
+      <%= link_to 'Statistics', dashboards_path('reports'), class:"nav-link #{active}" %>
     </li>
     <li class="nav-item">
       <% active = @dashboard == 'exports' ? 'nav-active' : '' %>
