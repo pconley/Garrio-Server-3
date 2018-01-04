@@ -23,7 +23,7 @@ This basic webapp has no authentication or APIs
 
 ## Command Cheats
 
-* docker-compose build
+* docker-compose build      # note... rebuild if changing Gemfile!
 * docker-compose up
 * docker-compose down
 
@@ -37,3 +37,13 @@ To deploy to heroku
 * heroku create           # one time to create the repo
 * git push heroku master  # will push and build
 * heroku open             # will open in default browser
+
+Regular git process
+
+* git checkout -b branchname
+* ... do interesting work ...
+* git add .
+* git commit -am "interesting work"
+* git checkout master
+* git merge branchname  # into master
+* git push origin master

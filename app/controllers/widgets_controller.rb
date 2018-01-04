@@ -12,6 +12,12 @@ class WidgetsController < ApplicationController
   def show
   end
 
+  def search
+    puts "*** search: params = #{params}"
+    search_term = params[:q].downcase
+    @widgets = Widget.where("lower(name) like ?", "%#{search_term}%")
+  end
+
   # GET /widgets/new
   def new
     @widget = Widget.new
